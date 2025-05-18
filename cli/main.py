@@ -1,10 +1,18 @@
 # librehub/cli/main.py
 
+import subprocess
+import sys
 import time
 import socket
 from core.peer_discovery import register_instance, start_discovery
 from core.peer_connect import peer_connect
 from core.qr_utils import generate_qr
+
+def install_requirements():
+    try:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
+    except subprocess.CalledProcessError:
+        print("Грешка при инсталиране на зависимости!")
 
 def connect_by_input():
     addr = input("Въведи IP:PORT или сканирай QR: ").strip()
@@ -27,6 +35,7 @@ def get_local_ip():
     return IP
 
 def main():
+    install_requirements()
     print("=== LibreHub v0.1 ===")
     z1 = register_instance(port=8000)
     z2, listener = start_discovery()
