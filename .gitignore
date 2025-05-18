@@ -1,0 +1,40 @@
+# Python кеш файлове и байткод
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Виртуални среди
+env/
+venv/
+.env/
+
+# Логове и временни файлове
+*.log
+*.tmp
+
+# Настройки на редактори и IDE-та
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# macOS специфични файлове
+.DS_Store
+
+# Файлове за pyinstaller, ако ги ползваш
+dist/
+build/
+*.spec
+
+# pycache директории във всяка папка
+**/__pycache__/
+
+# pip selfcheck файл
+pip-selfcheck.json
+
+# Разни други временни файлове
+*.swp
+*.bak
+*.orig
+*.old
+
