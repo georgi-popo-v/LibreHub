@@ -35,7 +35,6 @@ def get_local_ip():
     return IP
 
 def main():
-    install_requirements()
     print("=== LibreHub v0.1 ===")
     z1 = register_instance(port=8000)
     z2, listener = start_discovery()
@@ -54,6 +53,7 @@ def main():
         z2.close()
 
 if __name__ == "__main__":
+    install_requirements()
     mode = input("Избери режим (s=стартирай, c=свържи се): ").strip()
     if mode == "s":
         main()
