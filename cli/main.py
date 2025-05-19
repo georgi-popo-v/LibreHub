@@ -36,7 +36,8 @@ def get_local_ip():
 
 def main():
     print("=== LibreHub v0.1 ===")
-    z1 = register_instance(port=8000)
+    port = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
+    z1 = register_instance(port=port)
     z2, listener = start_discovery()
 
     ip = get_local_ip()
